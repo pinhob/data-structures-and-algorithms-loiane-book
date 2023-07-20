@@ -49,3 +49,47 @@ console.log('removeFirstPosition', numbers);
 // with shift
 numbers.shift();
 console.log('with shift', numbers);
+
+// remove by index range with splice
+numbers.splice(5, 3);
+console.log('splice to remove', numbers);
+
+// remove and add new itens with splice
+numbers.splice(5, 0, 2, 3, 4) // without removing anything
+numbers.splice(5, 3, 2, 3, 4) // removing 3 index before add new ones
+console.log('splice to add', numbers);
+
+// matriz: multidimensional array
+let averageTemp = [];
+averageTemp[0] = [65, 73, 75, 70, 68];
+averageTemp[0] = [73, 75, 78, 72, 74];
+
+const matrix3x3x3 = [];
+for (let i = 0; i < 3; i += 1) {
+  matrix3x3x3[i] = [];
+  for (let j = 0; j < 3; j += 1) {
+    matrix3x3x3[i][j] = [];
+    for (let z = 0; z < 3; z += 1) {
+      matrix3x3x3[i][j][z] = i + j + z;
+    }
+  }
+}
+
+console.log('matrix 3x3x3', matrix3x3x3);
+
+// merging arrays with concat
+const zero = 0;
+const positiveNumbers = [1, 2, 3];
+const negativeNumbers = [-3, -2, -1];
+numbers = negativeNumbers.concat(zero, positiveNumbers);
+
+console.log('concat', numbers);
+
+// iterate with every to find any false
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const isEven = (number) => number % 2 === 0;
+
+console.log('every', numbers.every(isEven));
+
+// iterate with some to find any true
+console.log('some', numbers.some(isEven));
