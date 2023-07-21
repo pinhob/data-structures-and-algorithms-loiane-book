@@ -41,11 +41,27 @@ class Stack {
     this.items = {};
     this.count = 0;
   }
+
+  toString() {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    let objString = `${this.items[0]}`;
+
+    for (let i = 1; i < this.count; i += 1) {
+      objString = `${objString}, ${this.items[i]}`;
+    }
+
+    return objString;
+  }
 }
 
 const stack = new Stack();
 
 stack.push(5);
 stack.push(8);
+stack.push(11);
 
 console.log(stack.size());
+console.log(stack.toString());
