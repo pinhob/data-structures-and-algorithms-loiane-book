@@ -65,3 +65,27 @@ stack.push(11);
 
 console.log(stack.size());
 console.log(stack.toString());
+
+// creating the class with WeakMap to have private atributes
+const items = new WeakMap();
+class StackWeakMap {
+  constructor() {
+    items.set(this, []); // creating the private atribute
+  }
+
+  push(element) {
+    const s = items.get(this);
+    s.push(element);
+  }
+
+  pop() {
+    const s = items.get(this);
+    return s.pop();
+  }
+}
+
+const stackWeakMap = new StackWeakMap();
+stackWeakMap.push(1);
+
+console.log(Object.getOwnPropertyNames(stack));
+console.log(Object.getOwnPropertyNames(stackWeakMap));
