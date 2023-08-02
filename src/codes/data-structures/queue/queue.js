@@ -1,4 +1,4 @@
-export default class Queue {
+class Queue {
   constructor() {
     this.count = 0;
     this.lowestCount = 0;
@@ -6,7 +6,7 @@ export default class Queue {
   }
 
   enqueue(element) {
-    this.items[this.count + 1] = element;
+    this.items[this.count] = element;
     this.count += 1;
   }
 
@@ -47,7 +47,7 @@ export default class Queue {
       return '';
     }
     let stringQueue = `${this.items[this.lowestCount]}`;
-    for (let i = this.lowestCount; i < this.count; i += 1) {
+    for (let i = this.lowestCount + 1; i < this.count; i += 1) {
       const currItem = this.items[i];
 
       stringQueue = `${stringQueue}, ${currItem}`;
@@ -55,3 +55,16 @@ export default class Queue {
     return stringQueue;
   }
 }
+
+const queue = new Queue();
+console.log(queue.isEmpty());
+queue.enqueue('John');
+queue.enqueue('Jack');
+console.log(queue.toString());
+queue.enqueue('Camila');
+console.log(queue.toString());
+console.log(queue.size());
+console.log(queue.isEmpty());
+queue.dequeue();
+queue.dequeue();
+console.log(queue.toString());
