@@ -1,4 +1,4 @@
-class Deque {
+export default class Deque {
   constructor() {
     this.count = 0;
     this.lowestCount = 0;
@@ -96,14 +96,15 @@ class Deque {
 }
 
 const deque = new Deque();
+console.log(deque.isEmpty());
 deque.addBack('Carlos');
 deque.addBack('Daniel');
-console.log(deque.items);
+console.log(deque.toString());
 console.log(deque.removeFront());
 deque.addBack('Sofia');
 deque.addBack('Ligia');
-console.log(deque.items);
+console.log(deque.toString());
 console.log(deque.removeBack());
-console.log(deque.items);
+console.log(deque.toString());
 console.log(deque.peekFront());
 console.log(deque.peekBack());
