@@ -92,6 +92,19 @@ export default class LinkedList {
 
     return false;
   }
+
+  indexOf(element) {
+    let current = this.head;
+
+    for (let i = 0; i < this.count && current !== null; i++) {
+      if (this.equalsFn(element, current.element)) {
+        return i;
+      }
+      current = current.next;
+    }
+
+    return -1;
+  }
 }
 
 const list = new LinkedList();
@@ -101,3 +114,4 @@ list.push(20);
 list.removeAt(1);
 list.insert(30, 1);
 console.log(list);
+console.log(list.indexOf(20));
