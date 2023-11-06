@@ -1,5 +1,6 @@
 {
   "name": "javascript-datastructures-algorithms",
+  "type": "module",
   "version": "0.0.1",
   "description": "Learning JavaScript Data Structures and Algorithms",
   "repository": {
