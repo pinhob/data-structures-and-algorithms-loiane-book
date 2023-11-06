@@ -105,13 +105,18 @@ export default class LinkedList {
 
     return -1;
   }
+
+  remove(element) {
+    const index = this.indexOf(element);
+    return this.removeAt(index);
+  }
 }
 
 const list = new LinkedList();
 list.push(10);
 list.push(15);
 list.push(20);
-list.removeAt(1);
 list.insert(30, 1);
+list.insert(40, 1);
+console.log(list.indexOf(20), list.remove(40), list.remove(30));
 console.log(list);
-console.log(list.indexOf(20));
