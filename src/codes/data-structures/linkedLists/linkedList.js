@@ -122,6 +122,22 @@ export default class LinkedList {
   getHead() {
     return this.head;
   }
+
+  toString() {
+    if (this.head === null) {
+      return '';
+    }
+
+    let objString = `${this.head.element}`;
+    let current = this.head.next;
+
+    for (let i = 1; i < this.size() && current !== null; i++) {
+      objString = `${objString}, ${current.element}`;
+      current = current.next;
+    }
+
+    return objString;
+  }
 }
 
 const list = new LinkedList();
@@ -131,4 +147,4 @@ list.push(20);
 list.insert(30, 1);
 list.insert(40, 1);
 console.log(list.indexOf(20), list.remove(40), list.remove(30));
-console.log(list);
+console.log(list.toString());
