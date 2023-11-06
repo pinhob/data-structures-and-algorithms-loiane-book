@@ -70,6 +70,28 @@ export default class LinkedList {
 
     return undefined;
   }
+
+  insert(element, index) {
+    if (index >= 0 && index <= this.count) {
+      const node = new Node(element);
+
+      if (index === 0) {
+        const current = this.head;
+        node.next = current;
+        this.head = node;
+      } else {
+        const previous = this.getElementAt(index - 1);
+        const current = previous.next;
+        node.next = current;
+        previous.next = node;
+      }
+
+      this.count += 1;
+      return true;
+    }
+
+    return false;
+  }
 }
 
 const list = new LinkedList();
@@ -77,4 +99,5 @@ list.push(10);
 list.push(15);
 list.push(20);
 list.removeAt(1);
+list.insert(30, 1);
 console.log(list);
