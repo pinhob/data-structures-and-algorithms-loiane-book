@@ -25,7 +25,6 @@ export default class LinkedList {
     let current;
 
     if (this.head == null) {
-      console.log('test');
       this.head = node;
     } else {
       current = this.head;
